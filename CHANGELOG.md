@@ -1,3 +1,7 @@
+## next
+
+- update UglifyJS to [3.19.3](https://github.com/mishoo/UglifyJS2/compare/v3.4.8...v3.19.3)
+
 ## 4.2.1 (22 September 2024)
 
 - fix Ruby 3.4 compatiblity, drop Ruby 2.3 and older support (#195)
