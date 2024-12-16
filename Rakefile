@@ -33,14 +33,15 @@ end
 
 def git_commit(files, message)
   `git add #{files.join(' ')}`
-  `git commit -S -m "#{message.gsub('"', "\\\"")}"`
+  `git commit -m "#{message.gsub('"', "\\\"")}"`
 end
 
+require 'byebug'
 # rubocop:disable Metrics/BlockLength
 namespace :uglifyjs do
   desc "Update UglifyJS source to version specified in VERSION environment variable"
   task :update do
-    cd 'vendor/uglifyjs' do
+    FileUtils.cd 'vendor/uglifyjs' do
       `git fetch && git checkout v#{version}`
     end
   end
